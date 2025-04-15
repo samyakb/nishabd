@@ -1,0 +1,21 @@
+.terms-tags li {
+  display: inline-block;
+  margin: 10px;
+  font-weight: 400 !important;
+  background-color: oklch(98% 0.016 73.684) !important;
+}
+
+.terms-tags a {
+  display: block;
+  padding: 3px 10px;
+  background-color: oklch(98% 0.016 73.684) !important;
+  color: oklch(64.6% 0.222 41.116);
+  border-radius: 6px;
+  border: 1px solid oklch(64.6% 0.222 41.116);
+  transition: transform 0.1s;
+}
+
+.terms-tags a:active {
+  background: var(--tertiary);
+  transform: scale(0.96);
+}

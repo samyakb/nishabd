@@ -1,0 +1,23 @@
+:root {
+  --gap: 20px;
+  --content-gap: 20px;
+  --header-height: 60px;
+  --footer-height: 60px;
+  --radius: 8px;
+  --theme: oklch(96.7% 0.003 264.542);
+  --entry: oklch(97% 0 0);
+  --primary: oklch(14.5% 0 0);
+  --secondary: oklch(14.5% 0 0);
+  --tertiary: oklch(47% 0.157 37.304);
+  --content: oklch(14.5% 0 0);
+  --hljs-bg: oklch(97% 0 0);
+  --code-bg: oklch(97% 0 0);
+  --secondary-urls: #516727;
+  --code-color: #202020;
+  --heading: oklch(64.6% 0.222 41.116);
+}
+
+
+.list {
+  background: var(--theme);
+}

@@ -1,3 +1,209 @@
-baseURL: https://example.org/
-languageCode: en-us
-title: My New Hugo Site
+baseURL: "https://samyakb.com"
+title: Nishabd
+theme: PaperMod
+pluralizelisttitles: false
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+#googleAnalytics: G-11NK905JK8
+cleanDestinationDir: true
+taxonomies:
+  tag: tags
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+pagination:
+  pagerSize: 20
+
+defaultTheme: light
+disableThemeToggle: true
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  robotsNoIndex: false
+  title: Nishabd
+  description: >-
+    I’m Samyak Bakliwal I enjoy reading, writing, and reflecting. Nishabd is my quiet space to pause, learn, and share—after the day winds down.
+  keywords:
+    [
+      "Samyak Bakliwal",
+      "Samyak",
+      "Nishabd",
+      "Blog",
+      "Software Engineering"
+    ]
+  author: "Samyak Bakliwal"
+  images: []
+  DateFormat: "January 2, 2006"
+  defaultTheme: light # dark, light
+  disableThemeToggle: true
+  ShowReadingTime: false
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: false
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: true
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: true
+  tocopen: false
+  hideFooter: false
+  ShowAllPagesInArchive: true
+  ShowFullTextinRSS: false
+  mainSections:
+    - databases
+    - javascript
+    - misc
+    - zephyr
+    - python
+    - typescript
+    - go
+
+  assets:
+    favicon: "/favicon.ico"
+    favicon16x16: "/favicon.png"
+    favicon32x32: "/favicon.png"
+    apple_touch_icon: "/favicon.png"
+    safari_pinned_tab: "/favicon.png"
+
+    disableFingerprinting: true
+    disableHLJS: true
+
+  label:
+    text: "Nishabd"
+    iconHeight: 24
+    iconWidth: 24
+    iconSVG: >
+      <svg style="width: 3rem; height:3rem;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2 14H5.09985M5.09985 14H18.9001M5.09985 14C5.66277 10.5933 8.53786 8 12 8C15.4621 8 18.3372 10.5933 18.9001 14M18.9001 14H22M6 17.5H18M9 21H15M5.79289 6.79289L5 6M18.2071 6.79289L19 6M12 3V4" stroke="var(--heading)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+
+  # home-info mode
+  homeInfoParams:
+#    Title:
+#      Samyak Bakliwal
+    Content: >
+      I’m <a href="/about" style="color:var(--heading);">Samyak Bakliwal</a>. I enjoy reading, writing, and reflecting. 
+      Nishabd ( निषब्द, <em>nish-uhbd</em> ) is my quiet space to pause, learn, and share—after the day winds down.
+  
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/samyakb"
+
+#  analytics:
+#    google:
+#      SiteVerificationTag: "google-site-verification=GoibEK52o5Z7xpKQ7ppTd8bA_s1wQp5hcG7aIWPJJfk"
+#    bing:
+#      SiteVerificationTag: "XYZabc" # automatically imported from google
+#    yandex:
+#      SiteVerificationTag: "cb037a09f985e313"
+#    naver:
+#      SiteVerificationTag: "097e5d3cd7b9e1ee3ad0addb5aaeea1b1a50be20"
+
+#  cover:
+#    hidden: false # hide everywhere but not in structured data
+#    hiddenInList: false # hide on list pages and home
+#    hiddenInSingle: false # hide on single page
+#    image: "https://blob.rednafi.com/static/images/home/cover.png"
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 200
+    threshold: 0.3
+    minMatchCharLength: 2
+    keys: ["title", "tags", "permalink", "summary", "content"]
+
+  # Custom
+  noRecentPosts: # Don't print recents posts sections in these pages
+    - /about/
+
+menu:
+  main:
+    - identifier: search
+      name: search
+      url: /search/
+      weight: 1
+
+    - identifier: tags
+      name: tags
+      url: /tags/
+      weight: 2
+
+    - identifier: archive
+      name: archive
+      url: /archive/
+      weight: 3
+
+    - identifier: about
+      name: about
+      url: /about/
+      weight: 4
+
+
+
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+# pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    # anchorLineNos: true
+    codeFences: true
+    guessSyntax: true
+    # lineNos: true
+    style: syntax-highlight
+    tabWidth: 4
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      linkifyProtocol: https
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    parser:
+      attribute:
+        block: true
+        title: true
+      autoHeadingID: true
+      autoHeadingIDType: github
+      wrapStandAloneImageWithinParagraph: true
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xhtml: false
+
+outputs:
+  home: ["HTML", "RSS", "JSON"]
+  page: ["HTML"]
+  section: ["HTML", "RSS"]
+  taxonomy: ["HTML", "RSS"]
+  term: ["HTML", "RSS"]
+
+security:
+  funcs:
+    getenv:
+      - "^HUGO_"
+
+module:
+  mounts:
+    - source: static
+      target: static
+
+copyright: "
+  Made with free time after work
+  "
