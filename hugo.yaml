@@ -11,6 +11,7 @@ buildExpired: false
 cleanDestinationDir: true
 taxonomies:
   tag: tags
+  series: series
 
 minify:
   disableXML: true
@@ -59,10 +60,6 @@ params:
   ShowAllPagesInArchive: true
   ShowFullTextinRSS: false
   mainSections:
-    - databases
-    - javascript
-    - misc
-    - zephyr
     - python
     - typescript
     - go
@@ -140,6 +137,11 @@ menu:
     - identifier: tags
       name: tags
       url: /tags/
+      weight: 2
+
+    - identifier: series
+      name: series
+      url: /series/
       weight: 2
 
     - identifier: archive

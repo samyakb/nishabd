@@ -1,0 +1,28 @@
+{{ if .Params.series }}
+{{ $name := index .Params.series 0 }}
+{{ $slug := $name | urlize }}
+{{ $lookupKey := lower $name }}
+{{ $series := index .Site.Taxonomies.series $lookupKey }}
+
+{{ if $series }}
+<details class="toc" style="margin-bottom: 0.5rem !important;">
+	<summary style="margin-left: .5rem">This article is part of the <a href="/series/{{ $slug }}" style="color: var(--heading); font-weight: 500;">
+		{{ $name }}
+	</a></summary>
+	<div class="inner">
+		<ul>
+			{{ $currentPage := .Page.Permalink }}
+			{{ range sort $series.Pages "Date" }}
+			<li>
+				{{ if ne $currentPage .Permalink }}
+				<a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+				{{ else }}
+				<b>{{ .LinkTitle }}</b>
+				{{ end }}
+			</li>
+			{{ end }}
+		</ul>
+	</div>
+</details>
+{{ end }}
+{{ end }}
